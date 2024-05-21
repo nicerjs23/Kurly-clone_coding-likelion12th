@@ -276,6 +276,9 @@ ul{
     align-items: flex-start;
     align-self: stretch;
 }
+#link{
+    text-decoration: none;
+}
 .ex1{
     color: var(--font-font2, #999);
     /* B2 */

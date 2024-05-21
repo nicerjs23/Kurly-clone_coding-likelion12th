@@ -5,6 +5,7 @@
   type="text/css"
   href="{% static 'css/main/main_page.css'%}"
 />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 
 
 <div class="tagFrame">
@@ -111,6 +112,7 @@
         </button>
       </div>
       <div class="productFrame">
+        <a id="link" href="product/{{product.id}}">
         <div class="ex1">샛별배송</div>
         <div class="productName"><span class="name">{{product}}</span></div>
         <div class="productDescription"><span class="des">{{product.description}}</span></div>
@@ -121,6 +123,7 @@
           <span class="rate">{{product.discount_rate}}%</span>
           <span class="discountPrice">{{product.discount_price}}원</span>
         </div>
+        </a>
       </div>
     </div>
     {% endfor %}

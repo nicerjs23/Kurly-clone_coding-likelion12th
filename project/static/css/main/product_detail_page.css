@@ -1,1 +1,240 @@
 /* product detail page - CSS */
+
+
+.bodyScreen {
+    display: flex;
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.bodyContentFrame{
+    width: 1050px;
+    margin: 0px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    align-self: stretch;
+}
+
+.bodyImage{
+    width: 430px;
+    height: 550px;
+    border-radius: 8px;
+    background-color: #D9D9D9;
+}
+.bodyContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+
+}
+.contentFrame1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    
+}
+.text1{
+    color: var(--font-font2, #999);
+    /* H3 */
+    font-family: Pretendard;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 133.333% */
+}
+.nameFrame{
+    display: flex;
+    padding-top: 8px;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pName{
+    color: #333;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px; /* 133.333% */
+    letter-spacing: -1px;
+}
+.priceFrame{
+    display: flex;
+padding: 20px 0px;
+align-items: flex-start;
+gap: 8px;
+}
+.rate{
+    color: var(--point-red, #FA622F);
+font-family: Pretendard;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 114.286% */
+letter-spacing: -1px;
+}
+.price{
+    color: var(--font-font-1, #333);
+font-family: Pretendard;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 114.286% */
+letter-spacing: -1px;
+}
+.line6{
+    width: 570px;
+    height: 1px;
+    background: #E2E2E2;
+}
+.noticeFrame{
+   
+    display: flex;
+    padding: 20px 0px;
+    align-items: flex-start;
+    align-self: stretch;
+}
+.noticetext1{
+    width: 128px;
+    color: var(--font-font2, #999);
+/* B2-bold */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 142.857% */
+letter-spacing: -1px;
+}
+.notice{
+    color: var(--font-font-1, #333);
+    /* B2 */
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -1px;
+}
+.choiceFrame{
+    display: flex;
+padding: 20px 0px;
+align-items: flex-start;
+align-self: stretch;
+}
+.choiceText{
+    width: 128px;
+    color: var(--font-font2, #999);
+/* B2-bold */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 20px; /* 142.857% */
+letter-spacing: -1px;
+}
+.choicebuttonFrame{
+    display: flex;
+padding: 10px 10px 15px 10px;
+flex-direction: column;
+align-items: flex-start;
+gap: 12px;
+flex: 1 0 0;
+border: 1px solid var(--stroke-stroke-2, #E2E2E2);
+}
+.prductName{
+    color: var(--font-font2, #999);
+/* B2 */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+letter-spacing: -1px;
+}
+.calculate{
+    display: flex;
+padding: 4px;
+align-items: flex-start;
+border-radius: 4px;
+border: 1px solid var(--stroke-stroke-2, #E2E2E2);
+}
+.m ,.name, .p {
+    width: 20px;
+    color: var(--font-font-1, #333);
+    text-align: center;
+    /* B2-bold */
+    font-family: Pretendard;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: -1px;
+}
+.navFrame{
+    display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 24px;
+align-self: stretch;
+
+}
+.totalPriceFrame{
+    display: flex;
+flex-direction: column;
+align-items: flex-end;
+gap: 10px;
+}
+.totalPrice{
+    display: flex;
+align-items: flex-end;
+gap: 8px;
+}
+.priceExText{
+    color: #000;
+
+/* B2 */
+font-family: Pretendard;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px; /* 142.857% */
+letter-spacing: -1px;
+}
+.price{
+    color: var(--font-font-1, #333);
+font-family: Pretendard;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 32px; /* 114.286% */
+letter-spacing: -1px;
+}
+.loginButton{
+    width: 570px;
+    height: 56px;
+    display: flex;
+    padding: 16px 0px;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    border-radius: 4px;
+background: var(--point-main, #5E0080);
+}
+.login{
+    color: #FFF;
+
+text-align: center;
+/* Btn */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}
