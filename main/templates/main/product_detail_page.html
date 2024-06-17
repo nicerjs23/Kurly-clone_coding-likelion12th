@@ -80,4 +80,89 @@
 
 
 <script src="{% static 'js/main/product_detail_page.js'%}"></script>
+
+<div class="screen">
+  <form action = "create_comment/" method = "POST" class="comment">
+    {% csrf_token %}
+    <div class="reviewScreen">
+      <div class="reviewTitle">상품후기</div>
+      <div class="reviewBody">
+        <select name="star">
+          <option value="0">별점</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div class="textArea">
+          <textarea 
+            class="textAreaFrame" 
+            placeholder="상품 후기를 남겨주세요" 
+            name="content" 
+            id="comment-textarea"></textarea>
+          
+            <button 
+            disabled
+            class="submitButton"
+            type="submit"
+            id="comment-submit">
+            등록
+          </button>
+        </div>
+        
+      </div>
+    </div>
+    
+  </form>
+
+  <script>
+    const textArea = document.getElementById("comment-textarea");
+    const submitButton=document.getElementById("comment-submit");
+
+    textArea.addEventListener("input", (event) => {
+  // do something
+
+    console.log(textArea.value.trim().length);
+      
+      if (textArea.value.trim().length > 0) {
+          submitButton.disabled = false;
+          submitButton.style.backgroundColor = "#5e0080";
+        } 
+        else {
+          submitButton.disabled = true;
+          submitButton.style.backgroundColor = "#dddddd";
+        }
+        
+    });
+  </script>
+
+  <div
+    style="
+      width: 1050px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px 0px;
+    "
+  >
+    {% for comment in comments %}
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px 8px;
+        border-bottom: solid 1px #d9d9d9;
+      "
+    >
+      <div style="display: flex; justify-content: space-between">
+        <p>평점:{{comment.star}}</p>
+        <a href="{% url 'main:delete_comment' comment.id %}">삭제</a>
+      </div>
+      <p class="B1">{{comment.content}}</p>
+    </div>
+    {% endfor%}
+  </div>
+</div>
 {% endblock %}

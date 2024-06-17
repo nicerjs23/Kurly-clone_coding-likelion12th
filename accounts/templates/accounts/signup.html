@@ -1,6 +1,105 @@
 <!-- 임시 회원가입 페이지 -->
-{% extends 'base.html' %} {% block content %}
+<!--id:LDG pw: 1234Qwer!로그인정보  -->
+{% extends 'base.html' %}
+{% block content %}
 <div class="container">
-  <h2>회원가입</h2>
+  <!-- 폼 -->
+  
+  <div class="signupBody">
+    <div class="signupTitle">회원가입</div>
+    <div class="line1"></div>
+    <div class="signupInputFrame">
+      <form action = "{% url 'accounts:signup' %}" method = "post" class="signupInput">
+        {% csrf_token %}
+        <div class="formFrame">
+            <!-- 여기 복붙 -->
+            <div class="formInputFrame">
+              <div class="formGroup">
+                <label for="username">아이디</label>
+                <div class="inputFrame">
+                  <input type="text" id="username" name="username" placeholder="아이디를 입력해주세요">
+                </div>
+              </div>
+
+              <div class="formGroup">
+                <label for="passwod">비밀번호</label>
+                <div class="inputFrame">
+                  <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요">
+                  <ul>
+                    <li>비밀번호를 8자 이상으로 작성해주세요.</li>
+                    <li>영문 대소문자, 숫자, 특수문자를 하나 이상 포함해주세요.</li>
+                    <li>사용가능 특수문자  @ ! ? - _</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="formGroup">
+                <label for="password2">비밀번호 확인</label>
+                <div class="inputFrame">
+                  <input type="password" id="password2" name="password2" placeholder="비밀번호를 한번 더 입력해주세요">
+                  <div id="warning">비밀번호가 일치하지 않습니다!</div>
+                </div>
+              </div>
+            </div>
+            <div class="line2"></div>
+
+            <div class="signupBtnDiv"><button type="submit" class="signupBtn"  id="signupBtn">가입하기</button></div>
+        </div>
+        
+        
+      </form>
+    </div>
+  </div>
+
+  <!-- <div class="signupBtn">
+
+  </div> -->
 </div>
+
+{% if error %}
+<div style="color: red">{{ error }}</div>
+{% endif %}
+
+<script>
+  // js
+  document.addEventListener('DOMContentLoaded', function() {
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const password2 = document.getElementById('password2');
+    const warning = document.getElementById('warning');
+    const signupBtn = document.getElementById('signupBtn');
+
+    function checkPasswords() {
+      if (password.value !== password2.value) {
+        warning.style.display = 'block';
+      } else {
+        warning.style.display = 'none';
+      }
+      signupButton();
+    }
+
+    function signupButton() {
+      const usernameFilled = username.value.trim() !== '';
+      const passwordFilled = password.value.trim() !== '';
+      const passwordsMatch = password.value === password2.value;
+      const passwordValid = password.value.length >= 8 &&
+                            /[A-Z]/.test(password.value) &&
+                            /[a-z]/.test(password.value) &&
+                            /[0-9]/.test(password.value) &&
+                            /[@!?-_]/.test(password.value);
+
+      if (usernameFilled && passwordFilled && passwordsMatch && passwordValid) {
+        signupBtn.style.background = '#5E0080'; // 보라색
+        signupBtn.style.color = '#FFF';
+      } else {
+        signupBtn.style.background = '#E2E2E2'; // 원래 색상
+        signupBtn.style.color = '#999';
+      }
+    }
+
+    username.addEventListener('input', signupButton);
+    password.addEventListener('input', checkPasswords);
+    password2.addEventListener('input', checkPasswords);
+  });
+
+</script>
 {% endblock %}
